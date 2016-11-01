@@ -1,0 +1,22 @@
+0.  that is the longest word in English language. And it refers to a lung disease
+1.  getrusage provides resource usage measures such as user/system CPU time used or others depending on the values that were passed in to the function
+2.  16
+3.  because values of before and after are not static and may change after each time program is rerun - values of before and after depend on the thread that is running
+4.  for loop starts at line 76: by usign fgetc function we start checking the opened file character by character from the first to the last one (until eof is reached)
+    for each character we do the following - firstly we check whether character is alphabetical (by using function isalpha) or an apostrophe. If that is the case then
+    this character is added to the word array and index variable is incremented. Then we check whether our word array is longer than 45 characters - if that is the case then we ignore this string
+    and reset the index. Then we check whether the character we are reading is a number (by using isdigit() function) - if so - ignore this word and reset the index. 
+    If the index is not reset then we add a null terminator to the end of the word array to mark it as complete and increment the word counter. We then check whether this word was spelled correctly,
+    update benchmarks and if there were any mispellings - we print this word to the screen. Then we set index to 0 and loop again until eof.
+5.  we use fgetc since we need to check every single character of the word to see whether it is actually an alphabetical letter or an apostrophe and not a number. 
+    Moreoever, fgetc allows us to easily count the number of characters in a string. By using fscanf we would read the whole string and this means that we would need to 
+    double the work as we would have to read every single character of that string to check the requirements. Moreoever, by reading a longer string than expected we could
+    overwrite parts of memory that we did not inted to.
+6.  We are using these functions to read the elements and not change them, therefore, a const type of paramater seems appropriate
+7.  I have used a trie data structure. This structure consists of two values. First one is is_word a boolean value which tells whether the word has ended.
+    Second one is an array of node pointers that store the values of alphabetical letters and apostrophe 
+8.  0.2 seconds
+9.  I have tried to minimize the number of functions that are called, declare variables in different places of the code (make them global or otherwise), i have
+    also tried to minimize the total amount of code. However, the current solution that I have reached seems appropriate for my current knowledge. It seems that this
+    has reduced the total time by about 0.4- 0.5 seconds but it varies everytime the code is run
+10. I believe that I could try to modify my code to improve it's efficiency but I would need guidance from someone else to do that. 

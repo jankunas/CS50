@@ -1,0 +1,41 @@
+#!/usr/bin/env php
+<?php
+
+    //to import config file
+    require("../includes/config.php");
+    
+    //checking for correct usage of running the command line
+    if ($argc != 2){
+        print("Usage: ./import filename.txt");
+        return false;
+    }
+    
+    //storing the file name into a variable
+    $file = $argv[1];
+    
+    //checking whether the file exists 
+    if (file_exists($file) === false)
+        print("The specified file does not exist");
+        
+    //checking whether the file is readable
+    if (is_readable($file) === false)
+        print("The specified file is not readable");
+        
+    //to open our file for reading 
+    $text = fopen($file, "r");
+    
+    //to check whether opening of the file was successful
+    if ($text === false){
+       print("There was a problem opening the file");
+       return false;
+    }
+        
+    //to iterate over the opened file and store data from the file to SQL database
+    while($data = fgetcsv($text, 1000, "\t")){
+        $row = CS50::query("INSERT INTO places (country_code, postal_code, place_name, admin_name1, admin_code1, admin_name2, admin_code2, admin_name3, admin_code3, latitude, longitude, accuracy)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?)", $data[0], $data[1], $data[2], $data[3], $data[4], $data[5], $data[6], $data[7], $data[8], $data[9], $data[10], $data[11]);
+    }
+    
+    //close the file
+    fclose($text);
+?>

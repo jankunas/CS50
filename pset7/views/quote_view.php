@@ -1,0 +1,1 @@
+One share of <?= htmlspecialchars($name)?> (<?= htmlspecialchars($symbol)?>) currently costs <?= htmlspecialchars($price)?> $

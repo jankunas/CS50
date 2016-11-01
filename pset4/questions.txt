@@ -1,0 +1,33 @@
+0.  BMP - 32 bit colors (over 4 billion colors)
+    GIF - 8 bits (256 colors)
+    JPEG - 24 bits (16 million colors)
+    PNG - 4 bits (16 million colors)
+1.  GIF
+2.  Lossy compression is when a file is compressed and some information (data) is lost when it is reversed to the initial state
+    lossless compression is when file is compressed using an algorithm that does not cause any data loss when file is reversed to the initial state
+3.  JPEG
+4.  when a file FAT file is erased, system modifie's filename's first character in the file directory, by signaling that it can be deleted.
+    Second, system moves all FAT file's clusters to hard drive's list of full clusters. Therefore, information in the address table is deleted but the file
+    remains on the system.
+5.  by overwriting previous data with other data such as ASCII NUL bytes(zeroes). 
+6.  stdint.h is a header file that provides a set of typedefs that narrows down specific typedefs 
+    in exact integer types(declares specified integer types as having a certain width) 
+7.  it makes clear that you intend to use data in a specific way. 
+    unit32_t makes sure that integer's width is exactly 32 bits
+8.  BYTE is 1 byte
+    DWORD is 4 bytes 
+    LONG is 4 bytes
+    WORD is 2 bytes
+9.  first two bytes of BMP is a WORD and it denotes bfType that specifies the file type
+    It must be the signature word BM (0x42 0x4D) to indicate bitmap.
+10. bfSize specifies the size of bitmap in bytes while biSize specifies the size of structure in bytes
+11. it means that the bitmap starts at the bottom left corner (top - down)
+12. The biBitCount determines the number of bits that define each pixel and the maximum number of colors in the bitmap.
+13. fopen might return NULL if it cannot create a file that it should write to (permission issues, 
+    system may not allow specific characters to written to a file, file is too large, etc.)
+14. fread takes the third argument as 1 since it takes the size of the bitmapfile header and each bitmap image
+    comes with only one header
+15. 1
+16. fseek() is used to change the writing/reading position of the stream
+17. it shows the position of the position pointer(current position in file)
+18. it is Rick Astley!

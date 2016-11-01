@@ -1,0 +1,1 @@
+<h2>You have successfully bought <?= htmlspecialchars($amount)?> share(s) for $ <?= htmlspecialchars(number_format($price, 2))?> </h2>

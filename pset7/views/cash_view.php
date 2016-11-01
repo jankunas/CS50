@@ -1,0 +1,1 @@
+You have successfully deposited $ <?= htmlspecialchars(number_format($cash, 2))?> 
