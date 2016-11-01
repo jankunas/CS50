@@ -1,0 +1,6 @@
+url=jdbc:mysql://localhost:3306/newdb?autoReconnect=true&useSSL=false
+username=root
+password=root
+shopUsername=abc
+shopPassword=abc
+cash=40
